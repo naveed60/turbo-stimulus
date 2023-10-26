@@ -1,0 +1,32 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+ 
+.navbar{
+    background-color:#00D1B2;
+  }
+  .scroll-none{
+    overflow-x: hidden !important;
+  }
+  
+  .custom-background {
+    background-image: url('/assets/images/bg1.jpg'); /* Replace 'background.jpg' with the actual filename of your background image */
+    background-size: cover; /* Adjust the background size as needed */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+  }
+  
+    .btn {
+      background-color:#40cf24 !important;
+    
+    }
+  
+   .card-1{
+    width: 50%!important;
+    margin-left: 16em !important;
+   }  
+  
+  .gradient-form {
+    background-image: url('/assets/images/bg1.jpg'); /* Replace 'your-image-url.jpg' with your actual image URL */
+    background-size: cover; /* This will ensure the image covers the entire section */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the image fixed in the viewport */
+  }
