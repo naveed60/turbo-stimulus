@@ -1,5 +1,6 @@
 <div class= "col-lg-10 mx-auto w-50">
-  
+   <%= link_to "Back to employees", employees_path, class:'btn btn-success' %>
+
   <h1>New employee</h1>
 
   <%= render "form", employee: @employee %>
@@ -7,6 +8,5 @@
   <br>
 
   <div>
-    <%= link_to "Back to employees", employees_path %>
   </div>
 </div>  
