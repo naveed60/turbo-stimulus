@@ -1,7 +1,8 @@
 <div class="col-lg-10 mx-auto mt-2">
   <div class="mt-0">
   </div>
-    <p style="color: rgb(31, 195, 10)"><%= notice %></p>
+    <p style="color: rgb(7, 176, 18)"><%= notice %></p>
+    <%= link_to "New employee", new_employee_path, data: {controller: 'employee-modal'},class:'btn btn-success' %>
 
   <h1>Employees</h1>
     <table class="table table-bordered">
@@ -15,12 +16,11 @@
         </tr>
       </thead>
       <tbody>
-        <%= @employees.each do |employee| %>
+        <% @employees.each do |employee| %>
           <%= render 'employee', employee: employee %>
         <% end %>
       </tbody>
     </table>
   
 
-    <%= link_to "New employee", new_employee_path, data: {controller: 'employee-modal'} %>
 </div>
