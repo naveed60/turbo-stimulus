@@ -1,0 +1,26 @@
+<div class="col-lg-10 mx-auto mt-2">
+  <div class="mt-0">
+  </div>
+    <p style="color: rgb(31, 195, 10)"><%= notice %></p>
+
+  <h1>Employees</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= @employees.each do |employee| %>
+          <%= render 'employee', employee: employee %>
+        <% end %>
+      </tbody>
+    </table>
+  
+
+    <%= link_to "New employee", new_employee_path %>
+</div>
