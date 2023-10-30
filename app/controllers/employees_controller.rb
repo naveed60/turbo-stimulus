@@ -26,6 +26,8 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
+        format.turbo_stream{ render  turbo_stream: turbo_stream.append(
+          'employee_list', partial:'employees/employee', locals: { employee:  @employee }) }
         format.html { redirect_to employee_url(@employee), notice: "Employee was successfully created." }
         format.json { render :show, status: :created, location: @employee }
       else

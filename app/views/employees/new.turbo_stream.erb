@@ -1,0 +1,5 @@
+<%= turbo_stream.replace 'remote-modal' do %>
+  <h1>New employee</h1>
+
+  <%= render "form_modal", employee: @employee %>
+<% end %>
