@@ -7,18 +7,18 @@ export default class extends Controller {
   }
 
   initialize(){
-    this.element.setAttribute("data-action", "click->emloyee-modal#showModal")
+    this.element.setAttribute("data-action", "click->emloyee-modal#click")
   }
 
-  showModal(event){
+  click(event){
     event.preventDefault()
        this.url = this.element.getAttribute("href")
        fetch(this.url, {
-        headrs:{
+        headrs: {
           Accept: "text/vnd.turbo-stream.html"
         }
        })
-       .then(response => response.text()) 
+       .then( r => r.text()) 
        .then(html => Turbo.renderStreamMessage(html))
   }
 }
