@@ -12,4 +12,14 @@ export default class extends Controller {
   disconnect() {
     this.modal.hide()
   }
+   
+  submitEnd(e){
+    if(e.detail.success) {
+    this.hideModal()
+    }
+  }
+
+  hideModal(){
+    this.element.remove()
+  }
 }

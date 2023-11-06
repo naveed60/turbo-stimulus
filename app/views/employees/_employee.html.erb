@@ -5,7 +5,7 @@
   <td><%= employee.contact_number %></td>
   <td>
     <%= link_to 'view', employee, class:'btn btn-info'%>
-    <%= link_to 'Edit', edit_employee_path(employee),data: { turbo_frame: "remote_modal" }, class:'btn btn-success'%>
+    <%= link_to 'Edit', edit_employee_path(employee), data: { turbo_frame: "remote_modal" }, class:'btn btn-success'%>
     <%= link_to "Delete", employee  ,class: "btn btn-danger me-1", data: {
       turbo_method: :delete,
       turbo_confirm: "Are you sure?"
