@@ -1,18 +1,22 @@
-<p class="alert alert-success"><%= notice %></p>
+<div class="col-lg-10 mx-auto mt-2">
+  <div class="mt-0">
+    <p class="alert alert-success"><%= notice %></p>
 
-<h1>Categories</h1>
+    <h1>Categories</h1>
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <div class="card">
-      <div class="card-body">
-        <%= render category %>
-        <p>
-          <%= link_to "Show this category", category, class: "btn btn-primary" %>
-        </p>
-      </div>
+    <div id="categories">
+      <% @categories.each do |category| %>
+        <div class="card">
+          <div class="card-body">
+            <%= render category %>
+            <p>
+              <%= link_to "Show this category", category, class: "btn btn-primary" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
 
-<%= link_to "New category", new_category_path, class: "btn btn-success" %>
+    <%= link_to "New category", new_category_path, class: "btn btn-success" %>
+  </div>
+</div>
