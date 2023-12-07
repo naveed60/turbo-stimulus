@@ -1,21 +1,51 @@
-<div class="col-lg-10 mx-auto mt-2">
-  <div class="mt-0">
-    <%= form_with(model: category, class: "form-horizontal") do |form| %>
-      <% if category.errors.any? %>
-        <div class="alert alert-danger">
-          <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <%= form_with(model: category, local: true) do |form| %>
+        <div class="modal-body">
+          <% if category.errors.any? %>
+            <div class="alert alert-danger">
+              <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-          <ul>
-            <% category.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
+              <ul>
+                <% category.errors.full_messages.each do |error| %>
+                  <li><%= error %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="mb-3">
+            <%= form.label :name, class: "form-label" %>
+            <%= form.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :type, class: "form-label" %>
+            <%= form.text_field :type, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :price, class: "form-label" %>
+            <%= form.text_field :price, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :code, class: "form-label" %>
+            <%= form.number_field :code, class: "form-control" %>
+          </div>
+
+          <div class="mb-3">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            <%= form.submit "Save", class: "btn btn-success", data: { action: 
+            "click=>modal#submitEnd"} %>
+          </div>
+        </div>  
       <% end %>
-
-      <div class="form-group">
-        <%= form.submit class: "btn btn-primary" %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>
+       
+          
