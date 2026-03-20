@@ -60,7 +60,12 @@ It’s designed to read as a progressive enhancement when you look at the HTML i
   <button data-action="clipboard#copy">Copy to Clipboard</button>
 </div>
 You can read that and have a pretty good idea of what’s going on. Even without knowing anything about Stimulus or looking at the controller code itself. It’s almost like pseudocode. That’s very different from reading a slice of HTML that has an external JavaScript file apply event handlers to it. It also maintains the separation of concerns that has been lost in many contemporary JavaScript frameworks.
+how can we find factor categories which have not lsd checklist ids 
 
+lsd-new(staging):002> LsdFactorCategory.last
+  LsdFactorCategory Load (0.4ms)  SELECT lsd_factorcategories.* FROM lsd_factorcategories ORDER BY lsd_factorcategories.id DESC LIMIT 1 /*application='LsdNew'*/
+=> #<LsdFactorCategory:0x00007abdddfad618 id: 222, key: "txt_subtitle_image_factors", lsd_checklists_ids: "128", en-US: "Image factors", es-MX: "Imagen factores">
+lsd-new(staging):003>
 As you can see, Stimulus doesn’t bother itself with creating the HTML. Rather, it attaches itself to an existing HTML document. The HTML is, in the majority of cases, rendered on the server either on the page load (first hit or via Turbo) or via an Ajax request that changes the DOM.
 
 Stimulus is concerned with manipulating this existing HTML document. Sometimes that means adding a CSS class that hides an element or animates it or highlights it. Sometimes it means rearranging elements in groupings. Sometimes it means manipulating the content of an element, like when we transform UTC times that can be cached into local times that can be displayed.
